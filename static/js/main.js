@@ -32,7 +32,7 @@ window.onload = function () {
 document.addEventListener('DOMContentLoaded', function () {
     const vinosContainer = document.getElementById('vinos-container');
 
-    fetch('http://localhost:5000/api/vinos')
+    fetch('https://lavinoteca.onrender.com/api/vinos')
         .then(response => response.ok ? response.json() : Promise.reject('Error en la red'))
         .then(vinos => mostrarVinos(vinos, vinosContainer))
         .catch(error => manejarError(vinosContainer, 'Error al cargar los vinos.'));
@@ -67,7 +67,7 @@ function manejarError(container, mensaje) {
 document.addEventListener('DOMContentLoaded', function () {
     const bodegasContainer = document.getElementById('bodegas-container');
     const domicilios = generarDomicilios();
-        fetch('http://localhost:5000/api/bodegas')//cambiar url según dónde se ejecute el proyecto
+        fetch('https://lavinoteca.onrender.com/api/bodegas')
         .then(response => response.ok ? response.json() : Promise.reject('Error en la red'))
         .then(bodegas => mostrarBodegas(bodegas, bodegasContainer, domicilios))
         .catch(error => manejarError(bodegasContainer, 'Error al cargar las bodegas.'));
